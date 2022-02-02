@@ -1,0 +1,24 @@
+
+
+.flex-container {
+  display: flex;
+}
+
+@for $i from 10 through 20 {
+    .fs#{$i}r {
+        font-size: #{div($i,10)}rem;
+
+    };
+}
+
+@for $i from 0 through 30 {
+    .m-#{$i} {
+        margin: #{$i} px;
+    }
+}
+
+@for $i from 0 through 30 {
+    .p-#{$i} {
+        padding: #{$i} px;
+    }
+}
