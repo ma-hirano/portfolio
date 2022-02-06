@@ -1,18 +1,36 @@
 <template>
-  <div>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-    <b-nav>
-      <b-navbar-brand class="fs18r m-2 p-0" tag="h1">Portfolio</b-navbar-brand>
-      <ul class="flex-container ">
-              <li class="p-2 m-1"><nuxt-link to="/">Link</nuxt-link></li>
-              <li class="p-2 m-1"><nuxt-link to="/space">Another Link</nuxt-link></li>
+  <div class="bgcolor-pr">
+    <b-nav class="align-items-center">
+      <b-navbar-brand class="fs25r m-2 p-0 pr-1" tag="h1">Portfolio</b-navbar-brand>
+      <ul class="p-0">
+              <li class="inline-block">
+                <nuxt-link
+                  to="/"
+                  :class="[navbar_a]"
+                >Home
+                </nuxt-link>
+              </li>
+              <li class="inline-block">
+                <nuxt-link
+                  to="/space"
+                  :class="[navbar_a]"
+                  class="ml-1"
+                >Space
+                </nuxt-link>
+              </li>
       </ul>
     </b-nav>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+  return {
+    navbar_a: 'block fs18r px-4 py-2 m-0',
+  }
+}
+};
 </script>
 
 <style>

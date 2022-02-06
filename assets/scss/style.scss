@@ -1,24 +1,54 @@
+@use "./resetCss.scss";
+@use "sass:math";
 
+$primary: #d2f4ea;
 
-.flex-container {
-  display: flex;
+html {
+    font-size: 62.5% ;
 }
 
-@for $i from 10 through 20 {
-    .fs#{$i}r {
-        font-size: #{div($i,10)}rem;
+/*
+display設定
+*/
+.flex {
+    display: flex;
+}
+.inline-block{
+    display: inline-block;
+}
+.block {
+    display: block;
+}
 
+/*
+寄せの設定
+*/
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.vertical-align-top {
+    vertical-align: top;
+}
+
+.vertical-align-bottom {
+    vertical-align: bottom;
+}
+
+/*
+色設定
+*/
+.bgcolor-pr {
+    background-color: $primary;
+}
+
+
+/*
+フォント設定
+*/
+@for $i from 10 through 30 {
+    .fs#{$i}r {
+        font-size: #{math.div($i, 10)}rem
     };
 }
 
-@for $i from 0 through 30 {
-    .m-#{$i} {
-        margin: #{$i} px;
-    }
-}
-
-@for $i from 0 through 30 {
-    .p-#{$i} {
-        padding: #{$i} px;
-    }
-}
