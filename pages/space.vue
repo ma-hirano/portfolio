@@ -1,7 +1,7 @@
 <template>
     <div>
       <Header/>
-      <Tutorial/>
+      <DeltaV/>
     </div>
 </template>
 
@@ -9,7 +9,6 @@
 import Vue from 'vue';
 import '@/assets/scss/style.scss'
 export default Vue.extend({
-  name: 'IndexPage',
 });
 </script>
 
