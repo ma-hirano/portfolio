@@ -1,7 +1,11 @@
 @use "./resetCss.scss";
 @use "sass:math";
 
-$primary: #d2f4ea;
+$primary: #E0F2F1;
+$secondary: #B2DFDB;
+$third: #80CBC4;
+$fourth: #4DB6AC;
+$teal: #009688;
 
 html {
     font-size: 62.5% ;
@@ -41,6 +45,18 @@ display設定
 .bgcolor-pr {
     background-color: $primary;
 }
+.bgcolor-se {
+    background-color: $secondary;
+}
+.bgcolor-th {
+    background-color: $third;
+}
+.bgcolor-fo {
+    background-color: $fourth;
+}
+.bgcolor-te {
+    background-color: $teal;
+}
 
 
 /*
@@ -52,3 +68,54 @@ display設定
     };
 }
 
+
+/*
+大きさの変更
+*/
+
+
+@for $i from 1 through 10000 {
+    .he-#{$i} {
+        height: #{$i}rem;
+    };
+}
+
+@for $i from 1 through 10000 {
+    .wi-#{$i} {
+        width: #{$i}rem;
+    };
+}
+
+/*
+ポジションの変更
+*/
+
+@for $i from -10000 through 10000 {
+    .tp-#{$i} {
+        top: #{$i}px
+    };
+}
+
+@for $i from -10000 through 10000 {
+    .lf-#{$i} {
+        left: #{$i}px
+    };
+}
+
+
+/*
+影
+*/
+
+.shadow1 {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+}
+
+/*
+角丸
+*/
+@for $i from 1 through 10 {
+    .br-#{$i} {
+        border-radius: #{$i}px
+    };
+}
