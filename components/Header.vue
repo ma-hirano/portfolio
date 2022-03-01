@@ -18,6 +18,14 @@
                 >Space
                 </nuxt-link>
               </li>
+              <li class="inline-block">
+                <nuxt-link
+                  to="/wordlePage"
+                  :class="[navbar_a]"
+                  class="ml-1"
+                >Wordle
+                </nuxt-link>
+              </li>
       </ul>
     </b-nav>
   </div>

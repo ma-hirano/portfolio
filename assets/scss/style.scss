@@ -12,6 +12,16 @@ html {
 }
 
 /*
+ボーダー設定
+*/
+
+@for $i from 0 through 100 {
+    .b-#{$i} {
+        border: 0px
+    };
+}
+
+/*
 display設定
 */
 .flex {
@@ -37,6 +47,10 @@ display設定
 
 .vertical-align-bottom {
     vertical-align: bottom;
+}
+
+.text-align-center {
+    text-align: center;
 }
 
 /*
@@ -76,15 +90,26 @@ display設定
 
 @for $i from 1 through 10000 {
     .he-#{$i} {
-        height: #{$i}rem;
+        height: #{$i}px;
     };
 }
 
 @for $i from 1 through 10000 {
     .wi-#{$i} {
-        width: #{$i}rem;
+        width: #{$i}px;
     };
 }
+
+@for $i from 1 through 100 {
+    .wi-#{$i}p:not(#_) {
+        width: #{percentage($i * 0.01)};
+    };
+}
+
+.obj-con {
+    object-fit: contain;
+}
+
 
 /*
 ポジションの変更
@@ -118,4 +143,22 @@ display設定
     .br-#{$i} {
         border-radius: #{$i}px
     };
+}
+
+@for $i from 1 through 10 {
+    .brt-#{$i} {
+        border-radius: #{$i}px #{$i}px 0 0
+    };
+}
+
+/*
+図形
+*/
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50px 86.6px 50px;
+    border-color: transparent transparent $teal transparent;
 }
