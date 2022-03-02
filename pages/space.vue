@@ -1,8 +1,8 @@
 <template>
-    <div>
-      <Header/>
-      <DeltaV/>
-    </div>
+  <div>
+    <Header/>
+    <DeltaV/>
+  </div>
 </template>
 
 <script lang='ts'>
