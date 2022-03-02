@@ -1,14 +1,15 @@
 <template>
   <div class="fs20r">
-    <b-card class="bgcolor-pr m-3 fs20r he-100">
+    <b-card class="bgcolor-pr m-3 fs20r he-800">
       <h2>デルタVの算出</h2>
+
       <div class="inline-block bgcolor-se position-relative shadow1 p-0 br-5"
-              :class="positionX + ' ' + positionY"
+              :class="m1.positionX + ' ' + m1.positionY"
       >
-        <div class="bgcolor-fo p-4"
+        <div class="bgcolor-fo p-4 brt-5 "
              draggable="true"
-             @dragstart="dragstart"
-             @dragend="dragend"
+             @dragstart="dragstart('m1', $event)"
+             @dragend="dragend('m1', $event)"
         ></div>
         <div>
           <table class="m-3">
@@ -31,6 +32,8 @@
           </table>
         </div>
       </div>
+
+
     </b-card>
   </div>
 </template>
@@ -40,6 +43,8 @@
 export default {
   data() {
     return {
+      test: 0,
+
       Mstart: 10,
       Mend: 1,
       Isp: 280,
@@ -47,6 +52,7 @@ export default {
       deltaV: 0,
       gravity: 9.81,
 
+      m1: {
       firstX: 0,
       firstY: 0,
       endX: 0,
@@ -57,6 +63,12 @@ export default {
       posY: 0,
       positionX: '',
       positionY: '',
+      },
+
+      m: {
+        firstX: 0,
+        firstY: 0,
+      }
     };
   },
 
@@ -65,19 +77,19 @@ export default {
   },
 
   methods: {
-    dragstart: function(event) {
-      this.firstX = event.pageX
-      this.firstY = event.pageY
+    dragstart: function(m, event) {
+      this[m].firstX = event.pageX
+      this[m].firstY = event.pageY
     },
-    dragend: function(event) {
-      this.endX = event.pageX
-      this.endY = event.pageY
-      this.diffX = this.endX - this.firstX
-      this.diffY = this.endY - this.firstY
-      this.posX = this.posX + this.diffX
-      this.posY = this.posY + this.diffY
-      this.positionX = 'lf-' + this.posX
-      this.positionY = 'tp-' + this.posY
+    dragend: function(m, event) {
+      this[m].endX = event.pageX
+      this[m].endY = event.pageY
+      this[m].diffX = this[m].endX - this[m].firstX
+      this[m].diffY = this[m].endY - this[m].firstY
+      this[m].posX = this[m].posX + this[m].diffX
+      this[m].posY = this[m].posY + this[m].diffY
+      this[m].positionX = 'lf-' + this[m].posX
+      this[m].positionY = 'tp-' + this[m].posY
     }
   },
 
