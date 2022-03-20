@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bgcolor-pr he-100vh">
     <Header />
     <Wordle />
   </div>

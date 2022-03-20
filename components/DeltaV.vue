@@ -1,10 +1,10 @@
 <template>
   <div class="fs20r">
-    <b-card class="bgcolor-pr m-3 fs20r he-800">
+    <b-card class="bgcolor-white m-3 fs20r he-800">
       <h2>デルタVの算出</h2>
 
       <div class="inline-block bgcolor-se position-relative shadow1 p-0 br-5"
-              :class="m1.positionX + ' ' + m1.positionY"
+           :style="{ top: m1.top, left: m1.left }"
       >
         <div class="bgcolor-fo p-4 brt-5 "
              draggable="true"
@@ -61,13 +61,8 @@ export default {
       diffY: 0,
       posX: 0,
       posY: 0,
-      positionX: '',
-      positionY: '',
-      },
-
-      m: {
-        firstX: 0,
-        firstY: 0,
+      left: '',
+      top: '',
       }
     };
   },
@@ -88,8 +83,9 @@ export default {
       this[m].diffY = this[m].endY - this[m].firstY
       this[m].posX = this[m].posX + this[m].diffX
       this[m].posY = this[m].posY + this[m].diffY
-      this[m].positionX = 'lf-' + this[m].posX
-      this[m].positionY = 'tp-' + this[m].posY
+
+      this[m].left = this[m].posX + 'px'
+      this[m].top = this[m].posY + 'px'
     }
   },
 

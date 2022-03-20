@@ -56,6 +56,9 @@ display設定
 /*
 色設定
 */
+.bgcolor-white {
+    background-color: white;
+}
 .bgcolor-pr {
     background-color: $primary;
 }
@@ -72,6 +75,9 @@ display設定
     background-color: $teal;
 }
 
+.color-white {
+  color: white;
+}
 
 /*
 フォント設定
@@ -82,19 +88,40 @@ display設定
     };
 }
 
+@for $i from 1 through 9 {
+    .fw#{$i * 100} {
+        font-weight: $i * 100;
+    };
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
 
 /*
 大きさの変更
 */
 
 
-@for $i from 1 through 10000 {
-    .he-#{$i} {
-        height: #{$i}px;
-    };
+@for $i from 1 through 1000 {
+  .he-#{$i} {
+      height: #{$i}px;
+  };
 }
 
-@for $i from 1 through 10000 {
+.he-100vh {
+  height: 100vh;
+}
+
+.he-100p {
+  height: 100%;
+};
+
+@for $i from 1 through 1000 {
     .wi-#{$i} {
         width: #{$i}px;
     };
@@ -109,24 +136,6 @@ display設定
 .obj-con {
     object-fit: contain;
 }
-
-
-/*
-ポジションの変更
-*/
-
-@for $i from -10000 through 10000 {
-    .tp-#{$i} {
-        top: #{$i}px
-    };
-}
-
-@for $i from -10000 through 10000 {
-    .lf-#{$i} {
-        left: #{$i}px
-    };
-}
-
 
 /*
 影
